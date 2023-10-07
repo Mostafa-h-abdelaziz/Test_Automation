@@ -1,22 +1,18 @@
-package mostafa;
+package login;
 
+import baseTest.BaseTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-import javax.xml.xpath.XPathExpression;
-
-import static org.testng.Assert.assertListContains;
 import static org.testng.Assert.assertTrue;
 
-public class M {
+public class LoginTest extends BaseTests {
 
- //invalid username
- @Test
-    public void t1() {
-  WebDriver driver = new ChromeDriver();
-  driver.get("https://the-internet.herokuapp.com/");
+
+  @Test(priority = 2)
+    public void InvalidUser() {
 
   //from link
   driver.findElement(By.xpath("//*[contains(text(),'Form Authentication')]")).click();
@@ -32,15 +28,12 @@ public class M {
   String expectedResult = "Your username is invalid!";
   String actualResult = driver.findElement(By.id("flash")).getText();
   assertTrue(actualResult.contains(expectedResult));
-  driver.quit();
 
  }
 
-    //invalid password
-    @Test
-    public void t2() {
-     WebDriver driver = new ChromeDriver();
-     driver.get("https://the-internet.herokuapp.com/");
+
+    @Test(priority = 3)
+    public void InvalidPassword() {
 
      //from link
      driver.findElement(By.xpath("//*[contains(text(),'Form Auth')]")).click(); // number 5 in xpath
@@ -56,14 +49,11 @@ public class M {
      String expectedResult = "Your password is invalid!";
      String actualResult = driver.findElement(By.id("flash")).getText();
      assertTrue(actualResult.contains(expectedResult));
-     driver.quit();
     }
 
-     // empty fields
-     @Test
-     public void t3(){
-     WebDriver driver = new ChromeDriver();
-     driver.get("https://the-internet.herokuapp.com/");
+
+     @Test(priority = 1)
+     public void EmptyLogin(){
 
      //from link
       driver.findElement(By.xpath("//*[contains(text(),'Form Authentication')]")).click();
@@ -80,20 +70,16 @@ public class M {
       String actualResult = driver.findElement(By.id("flash")).getText();
       assertTrue(actualResult.contains(expectedResult));
 
-      driver.quit();
 
      }
 
 
-
-     //valid login
-     @Test
-     public void t4(){
-      WebDriver driver = new ChromeDriver();
-      driver.get("https://the-internet.herokuapp.com/");
+     @Test(priority = 4)
+     public void ValidLogin(){
 
       //from link
       driver.findElement(By.xpath("//*[@id=\"content\"]/ul/li[21]/a")).click();
+
      // find username and pass
      driver.findElement(By.xpath("//*[@id=\"username\"]")).sendKeys("tomsmith");
      driver.findElement(By.xpath("//*[@id=\"password\"]")).sendKeys("SuperSecretPassword!");
@@ -102,10 +88,9 @@ public class M {
      driver.findElement(By.xpath("//*[@id=\"login\"]/button/i")).click();
 
      // report
-     String expectedResult = "You Logged into a secure area!";
+     String expectedResult = "You logged into a secure area!";
      String actualResult = driver.findElement(By.id("flash")).getText();
      assertTrue(actualResult.contains(expectedResult));
-     driver.quit();
  }
 
 }
