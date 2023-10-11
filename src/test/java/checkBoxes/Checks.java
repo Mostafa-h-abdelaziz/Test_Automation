@@ -11,9 +11,9 @@ public class Checks extends BaseTests{
         // open the module
         driver.findElement(By.xpath("//*[contains(text(),'Checkbox')]")).click();
         // check the box 1
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[1]")).click();
+        driver.findElement(By.xpath("//input[@type='checkbox'][1]")).click();
         // check the box 2
-        driver.findElement(By.xpath("/html/body/div[2]/div/div/form/input[2]")).click();
+        driver.findElement(By.xpath("//input[@type='checkbox'][2]")).click();
     }
 
 

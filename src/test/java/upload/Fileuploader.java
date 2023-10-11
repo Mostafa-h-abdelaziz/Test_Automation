@@ -15,14 +15,15 @@ public class Fileuploader extends BaseTests {
         driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
 
         //choose file
-        driver.findElement(By.cssSelector("#file-upload"));
+        driver.findElement(By.cssSelector("#file-upload")).click();
+
 
         // upload button
         driver.findElement(By.cssSelector("#file-submit")).click();
 
         // report
-        String expectedResult = "Internal Server Error";
-        String actualResult = driver.findElement(By.xpath("//*[contains(text(),'Internal Server Error')]")).getText();
+        String expectedResult = "mostafa.jpeg";
+        String actualResult = driver.findElement(By.xpath("//*[@id=,'uploaded-files')]")).getText();
         assertTrue(actualResult.contains(expectedResult));
 
     }
