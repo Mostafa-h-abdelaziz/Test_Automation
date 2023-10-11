@@ -22,7 +22,7 @@ protected WebDriver driver;
      }
 
      @AfterClass
-    public void turnoff(){
+    public void turnoffTab(){
          driver.quit();
 
      }
