@@ -8,16 +8,16 @@ import static org.testng.Assert.assertTrue;
 
 public class SendForgetEmail extends BaseTests {
 
-    @Test(priority = 2)
+    @Test(priority = 1)
     public void Forget() {
 
         //from link
         driver.findElement(By.xpath("//*[contains(text(),'Forgot Password')]")).click();
 
-        // find username and pass
+        // enter email
         driver.findElement(By.xpath("//*[@id='email']")).sendKeys("mostafa.hassan@mailinator.com");
 
-        // login button
+        // forget button
         driver.findElement(By.xpath("//*[contains(@class,'icon-2x icon-signin')]")).click();
 
         // report
