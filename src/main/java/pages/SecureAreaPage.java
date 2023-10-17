@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class SecureAreaPage {
 
+
     WebDriver driver;
     public SecureAreaPage(WebDriver driver) {
         this.driver = driver;
