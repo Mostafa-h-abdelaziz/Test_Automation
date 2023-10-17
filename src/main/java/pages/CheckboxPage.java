@@ -2,6 +2,10 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.List;
+import java.util.Set;
 
 public class CheckboxPage {
 
@@ -14,6 +18,7 @@ public class CheckboxPage {
     private final By checkBox2 = By.xpath("//input[@type='checkbox'][2]");
 
     public void clickCheck1(){
+
         driver.findElement(checkBox1).click();
     }
 

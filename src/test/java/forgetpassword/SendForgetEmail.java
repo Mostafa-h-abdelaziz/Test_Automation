@@ -1,12 +1,9 @@
 package forgetpassword;
 
 import baseTest.BaseTests;
-import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 import pages.ForgetPasswordPage;
-import pages.InternalServerError;
-import pages.LoginPage;
-import pages.SecureAreaPage;
+import pages.InternalServerErrorPage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -31,7 +28,7 @@ public class SendForgetEmail extends BaseTests {
 
         ForgetPasswordPage ForgetPasswordPage = homePage.CLICKoNForgetPasswordPage();
         ForgetPasswordPage.insertEmailField("tomsmith");
-        InternalServerError internalServerError = ForgetPasswordPage.clickRetrivePasswordButton();
+        InternalServerErrorPage internalServerError = ForgetPasswordPage.clickRetrivePasswordButton();
         internalServerError.getMessage();
         String actualResult = internalServerError.getMessage();
         String expectedResult = "Internal Server Error";

@@ -21,9 +21,9 @@ public class ForgetPasswordPage {
         driver.findElement(emailField).sendKeys(email);
     }
 
-    public InternalServerError clickRetrivePasswordButton(){
+    public InternalServerErrorPage clickRetrivePasswordButton(){
         driver.findElement(retrivePasswordButton).click();
-        return new InternalServerError(driver);
+        return new InternalServerErrorPage(driver);
     }
 
 
