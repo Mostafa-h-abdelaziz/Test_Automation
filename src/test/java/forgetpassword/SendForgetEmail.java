@@ -26,6 +26,8 @@ public class SendForgetEmail extends BaseTests {
         //String actualResult = driver.findElement(By.xpath("//*[contains(text(),'Internal Server Error')]")).getText();
         //assertTrue(actualResult.contains(expectedResult));
 
+
+
         ForgetPasswordPage ForgetPasswordPage = homePage.CLICKoNForgetPasswordPage();
         ForgetPasswordPage.insertEmailField("tomsmith");
         InternalServerErrorPage internalServerError = ForgetPasswordPage.clickRetrivePasswordButton();

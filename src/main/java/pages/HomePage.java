@@ -9,12 +9,13 @@ public class HomePage {
     WebDriver driver;
 
     public HomePage(WebDriver driver){
+       // System.out.println();
           this.driver = driver;
     }
     private By formAuthenticationLink = By.linkText("Form Authentication");
     private By forgotPasswordLink = By.linkText("Forgot Password");
     private By checkboxsLink = By.xpath("//*[contains(text(),'Checkbox')]");
-
+    private By uploadFileLink =  By.xpath("//*[contains(text(),'File Upload')]");
     //LoginPage
     public LoginPage clickOnFormAuthenticationLink(){
         driver.findElement(formAuthenticationLink).click();
@@ -31,6 +32,11 @@ public class HomePage {
     public CheckboxPage ClickOnCheckBoxs(){
         driver.findElement(checkboxsLink).click();
         return new CheckboxPage(driver);
+    }
+
+    public UploadPage clickOnUploadPage(){
+        driver.findElement(uploadFileLink).click();
+        return new UploadPage(driver);
     }
 
 }

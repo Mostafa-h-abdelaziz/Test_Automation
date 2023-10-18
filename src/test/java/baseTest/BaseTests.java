@@ -15,6 +15,8 @@ protected HomePage homePage;
 
      @BeforeClass
      public void setup(){
+
+         //System.out.println();
          driver = new ChromeDriver();
          driver.manage().window().maximize();
          homePage = new HomePage(driver);

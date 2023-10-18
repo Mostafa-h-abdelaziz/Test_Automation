@@ -4,6 +4,10 @@ import baseTest.BaseTests;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
+import pages.CheckboxPage;
+import pages.FileUploadedPage;
+import pages.SecureAreaPage;
+import pages.UploadPage;
 
 import static org.testng.Assert.assertTrue;
 
@@ -13,19 +17,29 @@ public class Upload extends BaseTests {
     public void VaildUpload1() {
 
         //from link
-        driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
+        //driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
 
         //choose file
-        driver.findElement(By.cssSelector("#file-upload")).sendKeys("D:/SWS/Automation/Test_AUtomation/src/test/java/uploadImage/mostafa hassan.jpg");
+        //driver.findElement(By.cssSelector("#file-upload")).sendKeys("D:/SWS/Automation/Test_AUtomation/src/test/java/uploadImage/mostafa hassan.jpg");
 
 
         // upload button
-        driver.findElement(By.cssSelector("#file-submit")).click();
+        //driver.findElement(By.cssSelector("#file-submit")).click();
 
         // report
+        //String expectedResult = "mostafa hassan.jpg";
+        //String actualResult = driver.findElement(By.id("uploaded-files")).getText();
+        //assertTrue(actualResult.contains(expectedResult));
+
+
+        UploadPage UploadPage = homePage.clickOnUploadPage();
+        UploadPage.Upload();
+        FileUploadedPage fileUploadedPage = UploadPage.clickOnFileSubmit();
+        fileUploadedPage.getValidationMessageUploaded();
+        String actualResult = fileUploadedPage.getValidationMessageUploaded();
         String expectedResult = "mostafa hassan.jpg";
-        String actualResult = driver.findElement(By.id("uploaded-files")).getText();
         assertTrue(actualResult.contains(expectedResult));
+
 
     }
 
