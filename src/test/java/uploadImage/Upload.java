@@ -47,18 +47,24 @@ public class Upload extends BaseTests {
     public void InVaildUpload() {
 
         //from link
-        driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
+        //driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
 
         //no uploaded file
 
         // upload button
-        driver.findElement(By.cssSelector("#file-submit")).click();
+        //driver.findElement(By.cssSelector("#file-submit")).click();
 
         // report
-        String expectedResult = "Internal Server Error";
-        String actualResult = driver.findElement(By.xpath("//*[contains(text(),'Internal Server Error')]")).getText();
-        assertTrue(actualResult.contains(expectedResult));
+        //String expectedResult = "Internal Server Error";
+        //String actualResult = driver.findElement(By.xpath("//*[contains(text(),'Internal Server Error')]")).getText();
+        //assertTrue(actualResult.contains(expectedResult));
 
+        UploadPage UploadPage = homePage.clickOnUploadPage();
+        FileUploadedPage fileUploadedPage = UploadPage.clickOnFileSubmit();
+        fileUploadedPage.getValidationMessageUploaded();
+        String actualResult = fileUploadedPage.getValidationMessageUploaded();
+        String expectedResult = "mostafa hassan.jpg";
+        assertTrue(actualResult.contains(expectedResult));
     }
 
     @Test(priority = 3)
