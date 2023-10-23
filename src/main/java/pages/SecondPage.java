@@ -17,7 +17,7 @@ public class SecondPage {
 
     private final By startButton = By.cssSelector("#start > button");
 
-    private final By validationWaitMessage2 = By.id("finish");
+    private final By validationWaitMessage2 = By.cssSelector("#finish");
 
     private final By loader = By.id("loading");
 
@@ -27,7 +27,8 @@ public class SecondPage {
 
     public String getvalidationWaitMessage2(){
         wait= new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(validationWaitMessage2)));
+        //wait.until(ExpectedConditions.visibilityOf(driver.findElement(validationWaitMessage2)));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(validationWaitMessage2));
         return driver.findElement(validationWaitMessage2).getText();
 
     }
