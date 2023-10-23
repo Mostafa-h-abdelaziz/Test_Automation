@@ -12,7 +12,7 @@ import static org.testng.Assert.assertTrue;
 
 public class DynamicWait extends BaseTests {
 
-    @Test
+    @Test (priority = 1)
     // for one page
     public void dynamicWait1(){
 
@@ -25,7 +25,7 @@ public class DynamicWait extends BaseTests {
     assertTrue(actualResult.contains(expectedResult));
     }
 
-    @Test
+    @Test (priority = 2)
     // for second page
 
     public void dynamicWait2(){
@@ -33,13 +33,12 @@ public class DynamicWait extends BaseTests {
         DynamicLoadingPage dynamicLoadingPage = homePage.clickOnDynumicLoadingButton();
         SecondPage secondPage = dynamicLoadingPage.clickOnExample2();
         secondPage.clickOnStartButton2();
-        //Thread.sleep(5000);
         String actualResult = secondPage.getvalidationWaitMessage2();
         String expectedResult = "Hello World!";
         assertTrue(actualResult.contains(expectedResult));
     }
 
-    @Test
+    @Test (priority = 3)
     // for second page invisible loader
 
     public void dynamicWait3(){
@@ -47,7 +46,6 @@ public class DynamicWait extends BaseTests {
         DynamicLoadingPage dynamicLoadingPage = homePage.clickOnDynumicLoadingButton();
         SecondPage secondPage = dynamicLoadingPage.clickOnExample2();
         secondPage.clickOnStartButton2();
-        //Thread.sleep(5000);
         String actualResult = secondPage.invisibleloading();
         String expectedResult = "Hello World!";
         assertFalse(actualResult.contains(expectedResult));

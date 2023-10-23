@@ -61,29 +61,24 @@ public class Upload extends BaseTests {
 
         UploadPage UploadPage = homePage.clickOnUploadPage();
         FileUploadedPage fileUploadedPage = UploadPage.clickOnFileSubmit();
-        fileUploadedPage.getValidationMessageUploaded();
-        String actualResult = fileUploadedPage.getValidationMessageUploaded();
-        String expectedResult = "mostafa hassan.jpg";
+        fileUploadedPage.getinvalidMessage();
+        String actualResult = fileUploadedPage.getinvalidMessage();
+        String expectedResult = "Internal Server Error";
         assertTrue(actualResult.contains(expectedResult));
+
+
     }
 
     @Test(priority = 3)
     public void VaildUpload3() {
 
-        //from link
-        driver.findElement(By.xpath("//*[contains(text(),'File Upload')]")).click();
 
-        //from red box
-        // why ???!!
-        driver.findElement(By.cssSelector("#drag-drop-upload")).sendKeys("D:/SWS/Automation/Test_AUtomation/src/test/java/uploadImage/mostafa hassan.jpg");
-
-
-        // upload button
-        driver.findElement(By.cssSelector("#file-submit")).click();
-
-        // report
+        UploadPage UploadPage = homePage.clickOnUploadPage();
+        UploadPage.DragDropBox();
+        FileUploadedPage fileUploadedPage = UploadPage.clickOnFileSubmit();
+        fileUploadedPage.getValidationMessageUploaded();
+        String actualResult = fileUploadedPage.getValidationMessageUploaded();
         String expectedResult = "mostafa hassan.jpg";
-        String actualResult = driver.findElement(By.id("uploaded-files")).getText();
         assertTrue(actualResult.contains(expectedResult));
 
     }

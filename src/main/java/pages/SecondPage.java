@@ -15,7 +15,7 @@ public class SecondPage {
         this.driver=driver;
     }
 
-    private final By startButton = By.cssSelector("#start >button");
+    private final By startButton = By.cssSelector("#start > button");
 
     private final By validationWaitMessage2 = By.id("finish");
 
