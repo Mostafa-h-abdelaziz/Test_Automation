@@ -46,6 +46,14 @@ public class HomePage {
         return new DynamicLoadingPage(driver);
     }
 
+    private By dropdownLink =By.partialLinkText("Dropdown");
+
+    public DropDownPage clickOnDropdownLink(){
+        driver.findElement(dropdownLink).click();
+        return new DropDownPage(driver);
+
+    }
+
 
 
 }
