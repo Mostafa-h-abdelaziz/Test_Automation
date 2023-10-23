@@ -39,4 +39,13 @@ public class HomePage {
         return new UploadPage(driver);
     }
 
+    private By dynamicLoading = By.linkText("Dynamic Loading");
+
+    public DynamicLoadingPage clickOnDynumicLoadingButton(){
+        driver.findElement(dynamicLoading).click();
+        return new DynamicLoadingPage(driver);
+    }
+
+
+
 }

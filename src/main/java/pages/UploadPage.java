@@ -19,9 +19,7 @@ public class UploadPage {
     public void Upload (){
         driver.findElement(upload).sendKeys("D:/SWS/Automation/Test_AUtomation/src/test/java/uploadImage/mostafa hassan.jpg");
     }
-    public void submitFile (){
-        driver.findElement(fileSubmit).click();
-    }
+
     public FileUploadedPage clickOnFileSubmit(){
         driver.findElement(fileSubmit).click();
         return new FileUploadedPage(driver);
