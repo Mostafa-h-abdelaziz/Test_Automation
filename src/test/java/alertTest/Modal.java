@@ -11,5 +11,6 @@ public class Modal extends BaseTests {
         EntryAdPage entryAdPage = homePage.clickOnEntryPageLink();
         entryAdPage.closeTheModalWindow();
         entryAdPage.retryToClickHere();
+
     }
 }
