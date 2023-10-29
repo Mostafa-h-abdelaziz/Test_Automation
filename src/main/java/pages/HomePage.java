@@ -54,6 +54,18 @@ public class HomePage {
 
     }
 
+    private By jsAlertLink = By.partialLinkText("JavaScript Alerts");
 
+    public JsAlertPage clickOnJsAlertLink(){
+        driver.findElement(jsAlertLink).click();
+        return new JsAlertPage(driver);
+    }
+
+    private By wYSIWYGEditorLink = By.partialLinkText("WYSIWYG Editor");
+
+    public WYSIWYGEditorPage clickOnWYSIWYGEditorLink(){
+        driver.findElement(wYSIWYGEditorLink).click();
+        return new WYSIWYGEditorPage(driver);
+    }
 
 }
