@@ -68,4 +68,11 @@ public class HomePage {
         return new WYSIWYGEditorPage(driver);
     }
 
+    private By entryAd = By.partialLinkText("Entry Ad");
+
+    public EntryAdPage clickOnEntryPageLink(){
+        driver.findElement(entryAd).click();
+        return new EntryAdPage(driver);
+    }
+
 }
