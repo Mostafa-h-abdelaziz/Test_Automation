@@ -31,11 +31,18 @@ public class EntryAdPage {
 
     public void retryToClickHere(){
         driver.findElement(ClickHereLink).click();
-        wait= new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOf(driver.findElement(ThisisAModelWindow)));
-        driver.findElement(CloseButtonOfModal).click();
+        try {
+            wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait.until(ExpectedConditions.visibilityOf(driver.findElement(ThisisAModelWindow)));
+            driver.findElement(CloseButtonOfModal).click();
+        }
+       catch (org.openqa.selenium.NoSuchFrameException e){
+           driver.findElement(ClickHereLink).click();
+           wait= new WebDriverWait(driver, Duration.ofSeconds(10));
+           wait.until(ExpectedConditions.visibilityOf(driver.findElement(ThisisAModelWindow)));
+           driver.findElement(CloseButtonOfModal).click();
+       }
 
-        // -triky
     }
 
 }
