@@ -1,5 +1,6 @@
 package pages;
 
+import HoverPage.HoverPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -75,4 +76,11 @@ public class HomePage {
         return new EntryAdPage(driver);
     }
 
+    private By hoverLink = By.partialLinkText("Hovers");
+
+    public HoverPage clickOnHoverPageLink(){
+        driver.findElement(hoverLink).click();
+        return new HoverPage(driver);
+
+    }
 }
