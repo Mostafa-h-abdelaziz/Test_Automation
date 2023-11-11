@@ -25,6 +25,7 @@ public class HoverPage {
         actions.moveToElement(element).perform();
         return new FigureCaption(element.findElement(figureCaption));
 
+
     }
 
 }
