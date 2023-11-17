@@ -83,4 +83,12 @@ public class HomePage {
         return new HoverPage(driver);
 
     }
+
+    private By dragnDropLink = By.partialLinkText("Drag and Drop");
+
+    public DragAndDropPage clickOnDragAndDropPageLink(){
+        driver.findElement(dragnDropLink).click();
+        return new DragAndDropPage(driver);
+
+    }
 }
