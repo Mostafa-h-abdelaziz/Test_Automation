@@ -28,5 +28,6 @@ public class DragAndDropPage {
         actions = new Actions(driver);
         actions.dragAndDrop(driver.findElement(boxA), driver.findElement(boxB)).build().perform();
 
+
     }
 }
